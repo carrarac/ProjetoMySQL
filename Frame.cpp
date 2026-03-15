@@ -95,7 +95,7 @@ void Frame::on_btnInserir_clicked(wxCommandEvent& evt)
 			db->escape(nome) + "', '" +
 			db->escape(email) + "')";
 		if (db->execute(sql)) {
-			this->SetStatusText(wxString::Format("Último ID de cliente inserido %llu.", db->getLastId()));
+			wxMessageBox(wxString::Format("Cliente ID %llu incluido", db->getLastId()), "Sucesso");
 			cliCampoNome->Clear();
 			cliCampoEmail->Clear();
 		}
